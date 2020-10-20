@@ -6,7 +6,6 @@
         >
             <slot>Pagar</slot>
         </button>
-        <form id="ePaycoForm"></form>
     </div>
 </template>
 
@@ -143,23 +142,6 @@
                 key: this.publicKey,
                 test: this.test,
             });
-
-            let ePaycoForm = document.getElementById('ePaycoForm')
-            let ePaycoScript = document.createElement('script')
-            ePaycoScript.setAttribute('src', 'https://checkout.epayco.co/checkout.js')
-            ePaycoScript.setAttribute('class','epayco-button')
-            ePaycoScript.setAttribute('data-epayco-key','491d6a0b6e992cf924edd8d3d088aff1')
-            ePaycoScript.setAttribute('data-epayco-amount',this.amount)
-            ePaycoScript.setAttribute('data-epayco-name',this.name)
-            ePaycoScript.setAttribute('data-epayco-description',this.description)
-            ePaycoScript.setAttribute('data-epayco-invoice','prueba_json_f5_7')
-            ePaycoScript.setAttribute('data-epayco-currency','cop')
-            ePaycoScript.setAttribute('data-epayco-country','co')
-            ePaycoScript.setAttribute('data-epayco-test','true')
-            ePaycoScript.setAttribute('data-epayco-external',this.external)
-            ePaycoScript.setAttribute('data-epayco-response','https://ejemplo.com/respuesta.html')
-            ePaycoScript.setAttribute('data-epayco-confirmation','https://ejemplo.com/confirmacion')
-            ePaycoForm.appendChild(ePaycoScript);
         },
     }
 </script>
